@@ -1,0 +1,62 @@
+configure(subprojects.findAll { subproject -> subproject.plugins.hasPlugin('application') }) {
+			
+	//description = "[Daemon] Daemon Service"
+
+	apply plugin: 'spring-boot'
+	
+    def jvmOpts = "-Xms1024m -Xmx1024m"
+        jvmOpts += " -Dfile.encoding=UTF-8"
+        jvmOpts += " -Dcatalina.base=%APP_HOME%"
+        jvmOpts += " -XX:+DisableExplicitGC"
+        jvmOpts += " -Xloggc:%APP_HOME%\\logs\\gc.log" 
+        jvmOpts += " -Djava.rmi.server.hostname=`hostname`.io.gmind7 -Dcom.sun.management.jmxremote.port=6789"
+        jvmOpts += " -Dio.gmind7.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false" 
+	
+	startScripts {
+
+		classpath = files('conf')
+
+	    doLast {
+	      def windowsScriptFile = file getWindowsScript()
+          def unixScriptFile    = file getUnixScript()
+
+          windowsScriptFile.text = windowsScriptFile.text.replace('%APP_HOME%\\lib\\conf', '%APP_HOME%\\lib\\*;%APP_HOME%\\conf')
+          unixScriptFile.text    = unixScriptFile.text.replace('$APP_HOME/lib/conf', '$APP_HOME/lib/*:$APP_HOME/conf')
+
+          windowsScriptFile.text = windowsScriptFile.text.replace("set DEFAULT_JVM_OPTS=", "set DEFAULT_JVM_OPTS=-Dspring.profiles.active=%1 ${jvmOpts}")
+          unixScriptFile.text    = unixScriptFile.text.replace("DEFAULT_JVM_OPTS=", "DEFAULT_JVM_OPTS=-Dspring.profiles.active=\$1 ${jvmOpts}")
+        }
+	}
+
+	installApp.doLast {
+        println "####### installApp resources copy name : [$project.name], version : [$project.version], destPath : [$buildDir/install/${applicationName}]  #######"
+	    copy {
+		    from sourceSets.main.output.resourcesDir
+		    into "${buildDir}/install/${applicationName}/conf"
+		    include "**/*"
+		}
+	}
+	
+	
+    task installWrapperApp(description: "Deploy Agent Daemon Install Agent App..") {
+        dependsOn installApp
+        doLast {
+            println "####### installWrapperApp resources copy name : [$project.name], version : [$project.version], destPath : [$buildDir/install/${applicationName}]  #######"
+            copy {
+                from "${projectDir}/src/main/wrapper"
+                into "${buildDir}/install/${applicationName}"
+                include "**"
+            }
+        }
+
+    }
+	
+	dependencies {
+	  // Spring Boot
+	  compile("org.springframework.boot:spring-boot-starter:$springBootVersion") { force = true }
+
+	  // Testing
+	  testCompile("org.springframework.boot:spring-boot-starter-test:$springBootVersion") { force = true }
+	}
+	
+}

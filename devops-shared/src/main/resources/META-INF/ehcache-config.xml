@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ehcache>
+<ehcache>
+
+    <diskStore path="java.io.tmpdir" />
+    
+    <!-- <diskStore path="D:/temp/ehcache" />-->
+     
+    <!--
+        maxElementsInMemory="1000" // 저장될 객체의 최대수
+        eternal="false" // 시간 설정 무시 옵션
+        timeToIdleSeconds="300" // 설정된 시간 동안 Idle 상태시 갱신
+        timeToLiveSeconds="600" // 설정된 시간 동안 유지 후 개신
+        overflowToDisk="false" // 메모리 부족시 디스크 저장 옵션
+        diskPersistent="false" // 디스크 저장 사용 옵선        
+        memoryStoreEvictionPolicy="LRU" // 데이터 제거 알고리즘 옵션
+        statistics = "true" // JMX 통계 정보 갱신 옵션
+     -->
+     
+	<defaultCache 
+	    maxElementsInMemory="1000"
+	    eternal="false"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        overflowToDisk="false"
+        diskPersistent="false"
+        memoryStoreEvictionPolicy="LRU">
+	</defaultCache>
+	
+    <cache
+      name="jpa_devops_user"
+      maxElementsInMemory="10000"
+      eternal="false"
+      memoryStoreEvictionPolicy="LRU"
+      timeToIdleSeconds="86400"
+      timeToLiveSeconds="86400">
+    </cache>
+    
+    <cache
+      name="jpa_devops_group"
+      maxElementsInMemory="10000"
+      eternal="false"
+      memoryStoreEvictionPolicy="LRU"
+      timeToIdleSeconds="86400"
+      timeToLiveSeconds="86400">
+    </cache>
+    
+    <cache
+      name="jpa_devops_membership"
+      maxElementsInMemory="10000"
+      eternal="false"
+      memoryStoreEvictionPolicy="LRU"
+      timeToIdleSeconds="86400"
+      timeToLiveSeconds="86400">
+    </cache>
+    
+    <cache
+      name="jpa_devops_project"
+      maxElementsInMemory="10000"
+      eternal="false"
+      memoryStoreEvictionPolicy="LRU"
+      timeToIdleSeconds="86400"
+      timeToLiveSeconds="86400">
+    </cache>
+    
+    <cache
+      name="ldap_group"
+      maxElementsInMemory="10000"
+      eternal="true"
+      diskPersistent="true"  
+      memoryStoreEvictionPolicy="LRU"
+      timeToIdleSeconds="86400"
+      timeToLiveSeconds="86400">
+    </cache>
+    
+    <cache
+      name="ldap_person"
+      maxElementsInMemory="10000"
+      eternal="true"
+      diskPersistent="true"  
+      overflowToDisk="true"
+      memoryStoreEvictionPolicy="LRU"
+      timeToIdleSeconds="86400"
+      timeToLiveSeconds="86400">
+    </cache>
+    
+    <cache
+      name="sonar_resource"
+      maxElementsInMemory="10000"
+      eternal="false"
+      diskPersistent="true"  
+      overflowToDisk="true"
+      memoryStoreEvictionPolicy="LRU"
+      timeToIdleSeconds="86400"
+      timeToLiveSeconds="86400">
+    </cache>
+    
+    <cache
+      name="sonar_measure"
+      maxElementsInMemory="10000"
+      eternal="false"
+      diskPersistent="true"  
+      memoryStoreEvictionPolicy="LRU"
+      timeToIdleSeconds="86400"
+      timeToLiveSeconds="86400">
+    </cache>
+    
+	<cache
+	  name="org.hibernate.cache.internal.StandardQueryCache"
+	  maxElementsInMemory="10000"
+	  eternal="false"
+	  memoryStoreEvictionPolicy="LRU"
+	  timeToIdleSeconds="86400"
+	  timeToLiveSeconds="86400">
+	</cache>
+	
+	<cache
+	  name="org.hibernate.cache.spi.UpdateTimestampsCache"
+	  maxElementsInMemory="10000"
+	  eternal="true">
+	</cache>
+	
+</ehcache>

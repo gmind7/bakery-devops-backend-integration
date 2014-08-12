@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+	<link rel="icon" href="resources/site/img/favicon.ico" type="image/x-icon"/>
+
+    <title>GMIND7 DevOps</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="resources/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom styles for this template -->
+    <link href="resources/site/css/main.css" rel="stylesheet" type='text/css'/>
+	<link href="resources/site/css/font.css" rel="stylesheet" type='text/css'/>
+	<link href='http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css' rel='stylesheet' type='text/css' />
+    
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"/>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"/>
+<![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <div class="navbar-brand">
+          	<a href="/"><img src="resources/site/img/GMIND7_logo.png" height="35" style="margin-top:-5px;"/><b> PNTG DevOps</b></a>
+          </div>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">        
+	        <li><a href="#development" style="hover:">Development</a></li>
+	        <li><a href="#collaboration" style="hover:">Collaboration</a></li>
+	        <li><a href="#operation" style="hover:">Operation</a></li>
+	      </ul>
+	      <ul class="nav navbar-nav navbar-right">
+	        <li><a href="mailto:@GMIND7.com?Subject=운영 툴 관련으로 문의를 드립니다." target="_top">Help</a></li>        
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+    </div>
+
+    <a name="development"></a>
+    <div id="headerwrap">
+		<div class="container">		  
+	      <div class="row">
+	        <div class="col-lg-4">
+	          <h3><img src="resources/site/img/jenkins-headshot.png" width="35" height="35"/> Build Test</h3>
+	          <p class="nanumgothic">소스 코드가 소스 관리 시스템에 커밋이 되었을 때 마다 CI툴이 이를 감지 하고 자동으로 빌드와 테스트틀 수행하며 실패 할 경우 메일로 알려 드립니다.</p>
+	          <p>
+	          	<a class="btn btn-primary" href="" target="_blank">User Guide raquo;</a>
+	          	<a class="btn btn-success" href="" target="_blank">View details </a>
+	          </p>
+	        </div>
+	        <div class="col-lg-4">
+	          <h3><img src="resources/site/img/deployment_logo.png" width="35" height="35"/> Deployment</h3>
+	          <p class="nanumgothic">빌드 후 생성된 배포 파일을 각 서버별로 반영 배포 해 주는 서비스로써 일련의 과정을 신뢰 하고 예측 할 수 있는 배포 관리 시스템 입니다.</p>
+	          <p>
+	          	<a class="btn btn-primary" href="" target="_blank">User Guide </a>
+	          	<a class="btn btn-success" href="" target="_blank">View details </a>
+	          </p>
+	       </div>
+	        <div class="col-lg-4">
+	          <h3><img src="resources/site/img/monitoring_logo.png" width="35" height="35"/> Monitoring</h3>
+	          <p class="nanumgothic">운영 중인 서버의 어플리케이션 위주의 문제점을 전달 받아 장애 상황을 예측 하고 파악 할 수 있는 진단, 관리를 위한 모니터링 시스템 입니다.</p>
+	          <p>
+	          	<a class="btn btn-primary" href="" target="_blank">User Guide </a>
+	          	<a class="btn btn-success" href="" target="_blank">View details </a>
+	          </p>
+	        </div>
+	     </div>
+	     <div class="row">
+	        <div class="col-lg-4">
+	          <h3><img src="resources/site/img/download_logo.png" width="35" height="35"/> Old Artifact Download</h3>
+	          <p class="nanumgothic">빌드 후 생성 된 배포 Artifact 파일과 Perforce 설정 파일을 압축 하여 다운로드 받을 수 있는 구 버전 다운로드 사이트 입니다.</p>
+	          <p>
+	          	<a class="btn btn-success" href="" target="_blank">View details </a>
+	          </p>
+	        </div>
+	        <div class="col-lg-4">
+	          <h3><img src="resources/site/img/jfrog_logo.jpg" width="35" height="35"/> Maven Central</h3>
+	          <p class="nanumgothic">JFrog Artifactory는 Maven Repository Manager(사내 Maven Central)로 프로젝트 또는 기업에서 필요로 하는 내부 리포지토리 구성을 위한 도구 입니다.</p>
+	          <p>
+	          	<a class="btn btn-success" href="" target="_blank">View details </a>
+	          </p>
+	       </div>
+	        <div class="col-lg-4">
+	          <h3><img src="resources/site/img/sonarqube_logo.png" width="60"/> Sonarqube</h3>
+	          <p class="nanumgothic">Sonarqube는 소프트웨어 품질 관리 퀄리티 매니저 서버로 프로그래머에게 보이지 않는 비기능적인 문제를 해결 하도록 도와 줍니다.</p>
+	          <p>
+	          	<a class="btn btn-success" href="" target="_blank">View details </a>
+	          </p>
+	        </div>
+	      </div><!-- /row -->
+		</div><!-- /container -->
+	</div><!-- /headerwrap -->
+	
+	<a name="collaboration"></a>
+	<div id="orangewrap">
+		<div class="container">
+			<div class="row">
+				<div class="span12 page-header text-center">
+					<h3><b>Atlassian Software Development and Collaboration Tools</b></h3>
+					<p class="lead nanumgothic">
+						개발을 추적하고 쟁점을 체계화하고 작업을 할당하고 팀 활동을 추적할 수 있게 해주는 아틀라시안의 ALM 제품을 지원 합니다.
+					</p>
+				</div> 
+			</div>	
+			<div class="row">
+		        <div class="col-lg-2 text-center">
+		          <h3><img src="resources/site/img/jira_logo.png" height="35"/></h3>
+		          <p><a class="btn btn-success" href="" target="_blank">View details </a></p>
+		        </div>
+		        <div class="col-lg-2 text-center">
+		          <h3><img src="resources/site/img/confluence_logo.png" height="35"/></h3>
+		          <p><a class="btn btn-success" href="" target="_blank">View details </a></p>
+		        </div>
+		        <div class="col-lg-2 text-center">
+		          <h3><img src="resources/site/img/stash_logo.png" height="35"/></h3>
+		          <p><a class="btn btn-success" href="" target="_blank">View details </a></p>
+		        </div>
+		        <div class="col-lg-2 text-center">
+		          <h3><img src="resources/site/img/soutcetree_logo.png" height="35"/></h3>
+		          <p><a class="btn btn-success" href="https://www.atlassian.com/software/sourcetree/overview" target="_blank">View details </a></p>
+		        </div>
+		        <div class="col-lg-2 text-center">
+		          <h3><img src="resources/site/img/fisheye_logo.png" height="35"/></h3>
+		          <p><a class="btn btn-success" href="" target="_blank">View details </a></p>
+		        </div>	
+		        <div class="col-lg-2 text-center">
+		          <h3><img src="resources/site/img/crucible_logo.png" height="35"/></h3>
+		          <p><a class="btn btn-success" href="" target="_blank">View details </a></p>
+		        </div>		         
+	       </div><!-- /row -->
+		</div><!-- /container -->
+	</div>
+	
+    <a name="operation"></a>
+	<div id="greenwrap">
+		<div class="container">	
+			<div class="row">
+				<div class="span12 page-header text-center">
+					<h3><b>GMIND7 Software Operations Tools</b></h3>
+					<p class="lead nanumgothic">
+						사내 모바일, 웹, 어플리케이션 운영을 위한 필수 관리 서비스로 다음과 같은 사이트가 제공 되고 있습니다.
+					</p>
+				</div> 
+			</div>	
+			<div class="row">				
+		        <div class="col-lg-3">
+		          <h3><img src="resources/site/img/appcenter_logo.png" width="35" height="35"/> AppCenter</h3>
+		          <p>
+		          	<a class="btn btn-primary" href="" target="_blank">User Guide </a>
+		          	<a class="btn btn-success" href="" target="_blank">View details </a>
+		          </p>
+		        </div>
+		        <div class="col-lg-3">
+		          <h3><img src="resources/site/img/webhard_logo.png" width="35" height="35"/> WebHard</h3>
+		          <p>
+		          	<a class="btn btn-primary" href="" target="_blank">User Guide </a>
+		          	<a class="btn btn-success" href="" target="_blank">View details </a>
+		          </p>
+		        </div>
+		        <div class="col-lg-3">
+		          <h3><img src="resources/site/img/opsview_logo.png" width="35" height="35"/> OpsView</h3>
+		          <p>
+		          	<a class="btn btn-primary" href="" target="_blank">User Guide </a>
+		          	<a class="btn btn-success" href="" target="_blank">View details </a>
+		          </p>
+		        </div>
+		        <div class="col-lg-3">
+		          <h3><img src="resources/site/img/l7_logo.png" width="35" height="35"/> L7View</h3>
+		          <p>
+		          	<a class="btn btn-primary" href="" target="_blank">User Guide </a>
+		          	<a class="btn btn-success" href=" target="_blank">View details </a>
+		          </p>
+		        </div>
+		        <div class="col-lg-3">
+		          <h3><img src="resources/site/img/log_logo.png" width="35" height="35"/> WebLogger</h3>
+		          <p>
+		          	<a class="btn btn-primary" href="" target="_blank">User Guide </a>
+		          	<a class="btn btn-success" href="" target="_blank">View details </a>
+		          </p>
+		        </div>
+		        <div class="col-lg-3">
+		          <h3><img src="resources/site/img/adauth_logo.png" width="35" height="35"/> AdAuth</h3>
+		          <p>
+		          	<a class="btn btn-primary" href="" target="_blank">User Guide </a>
+		          	<a class="btn btn-success" href="" target="_blank">View details </a>
+		          </p>
+		        </div>
+		        <div class="col-lg-3">
+		          <h3 class="nanumgothic"><img src="resources/site/img/help_logo.png" width="35" height="35"/> Helper</h3>
+		          <p>
+		          	<a class="btn btn-primary" href="" target="_blank">Wiki Guide </a>
+		          </p>
+		        </div>
+		    </div>
+		</div><!-- /container -->
+	</div>
+	
+	<div id="navywrap">
+		<div class="container">			
+			<p class="centered">© 2014 GMIND7 PNTG InfraPlatform Team. All rights reserved.</p>
+		</div><!-- /container -->
+	</div>
+	
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="resources/lib/jquery/jquery-1.11.1.min.js"></script>
+    <script src="resources/lib/bootstrap/js/bootstrap.min.js"></script>    
+  </body>
+</html>

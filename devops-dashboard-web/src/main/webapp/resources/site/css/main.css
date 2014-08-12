@@ -1,0 +1,363 @@
+/*
+ * Author: Carlos Alvarez
+ * URL: http://alvarez.is
+ *
+ * Project Name: FLATTY - Free Bootstrap 3 Theme
+ * Version: 1.0
+ * URL: http://blacktie.co
+ */
+
+body {
+  background-color: #f2f2f2;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: #555;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Titles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: #333;
+}
+
+h1 {
+	font-size: 40px;
+}
+
+h3 {
+	color: #95a5a6;
+	font-weight: 400;
+}
+
+h4 {
+	color: #95a5a6;
+	font-weight: 400;
+	font-size: 20px;
+}
+
+/* Paragraph & Typographic */
+p {
+    line-height: 28px;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.centered {
+    text-align: center;
+}
+
+/* Links */
+a {
+    color: #292C37;
+    word-wrap: break-word;
+
+    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+a:hover,
+a:focus {
+    color: #7b7b7b;
+    text-decoration: none;
+    outline: 0;
+}
+
+a:before,
+a:after {
+    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+ hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.navbar-default {
+	background-color: #2B2B2B;
+	border-color: transparent;
+}
+
+.navbar-default .navbar-brand {
+	color: white;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: white;
+}
+
+/* Helpers */
+
+.mt {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.form-control {
+	height: 42px;
+	font-size: 18px;
+	width: 280px;
+}
+
+i {
+	margin: 8px;
+	color: #292C37; 
+}
+
+.navbar-header .navbar-brand > a {
+    color: #FFFFFF;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: yellow;
+}
+
+/* HeaderWrap */
+#headerwrap {
+	/* background: url(../img/bg01.jpg) no-repeat center top; */
+	background-color: #292C37;
+	margin-top: -20px;
+	padding-top:80px;
+	background-attachment: relative;
+	background-position: center center;
+	min-height: 730px;
+	width: 100%;
+	
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#headerwrap h1 {
+    margin-top: 60px;
+    margin-bottom: 15px;
+    color: white;
+    font-size: 45px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+#headerwrap h3 {
+	margin-top: 60px;
+	margin-bottom: 15px;
+	color: white;
+	font-size: 30px;
+	font-weight: 300;
+	letter-spacing: 1px;
+}
+
+#headerwrap p {
+    color: white;
+}    
+
+
+/* OrangeWrap */
+#orangewrap {
+    /* background: url(../img/bg01.jpg) no-repeat center top; */
+    background-color: #FC5242;
+    margin-top: -20px;
+    padding-top:30px;
+    background-attachment: relative;
+    background-position: center center;
+    min-height: 450px;
+    width: 100%;
+    
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#orangewrap h1 {
+    margin-top: 60px;
+    margin-bottom: 15px;
+    color: white;
+    font-size: 45px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+#orangewrap h3 {
+    margin-top: 60px;
+    margin-bottom: 15px;
+    color: white;
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+#orangewrap h4 {
+    color: white;
+}
+
+#orangewrap p {
+    color: white;
+}  
+
+/* GreenWrap */
+#greenwrap {
+    /* background: url(../img/bg01.jpg) no-repeat center top; */
+    background-color: #1DBB90;
+    margin-top: -20px;    
+    padding-top:0px;
+    background-attachment: relative;
+    background-position: center center;
+    min-height: 600px;
+    width: 100%;
+    
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#greenwrap h1 {
+    margin-top: 60px;
+    margin-bottom: 15px;
+    color: white;
+    font-size: 45px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+#greenwrap h3 {
+    margin-top: 60px;
+    margin-bottom: 15px;
+    color: white;
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+#greenwrap p {
+    color: white
+} 
+
+/* BlueWrap */
+#bluewrap {
+    /* background: url(../img/bg01.jpg) no-repeat center top; */
+    background-color: #4F92BF;
+    margin-top: -20px;
+    padding-top:80px;
+    background-attachment: relative;
+    background-position: center center;
+    min-height: 800px;
+    width: 100%;
+    
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#bluewrap h1 {
+    margin-top: 60px;
+    margin-bottom: 15px;
+    color: white;
+    font-size: 45px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+#bluewrap h3 {
+    margin-top: 60px;
+    margin-bottom: 15px;
+    color: white;
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+#bluewrap p {
+    color: white
+} 
+
+/* BlueWrap */
+#navywrap {
+    /* background: url(../img/bg01.jpg) no-repeat center top; */
+    background-color: #292C37;
+    margin-top: 0px;
+    padding-top:20px;
+    background-attachment: relative;
+    background-position: center center;
+    min-height: 50px;
+    width: 100%;
+    
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#navywrap h1 {
+    margin-top: 60px;
+    margin-bottom: 15px;
+    color: white;
+    font-size: 45px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+#navywrap h3 {
+    margin-top: 60px;
+    margin-bottom: 15px;
+    color: white;
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+#navywrap p {
+    color: white
+} 
+
+.linewell {
+/* background-color: #34495e; */
+background: url(../img/bgredtwo.png) 0% 0% fixed repeat;
+border: 0px;
+border-radius: 0px;
+min-height: 150px;
+}
+
+.nanumgothic {font-family: 'NanumGothic', '나눔고딕'; font-size: 15px;}

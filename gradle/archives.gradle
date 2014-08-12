@@ -1,0 +1,52 @@
+//저장소를 지정
+uploadArchives {
+	
+	doLast {
+		println "####### uploadArchivesProject name : [$project.name], version : [$project.version]  #######"
+	}
+	
+	repositories.mavenDeployer {
+		configureAuth = {
+			authentication(userName: "artifactory", password: "artifactory")
+		}
+		snapshotRepository(url: "$config.artifactory.host.url/libs-snapshot-local", configureAuth)
+		repository(url: "$config.artifactory.host.url/libs-release-local", configureAuth)
+	}
+}
+
+task uploadReleaseArchives(description: "Uploads all artifacts belonging to release configuration..") {
+	dependsOn uploadArchives
+}
+
+task uploadSanpshotArchives(description: "Uploads all artifacts belonging to shotshot configuration..") {
+	dependsOn uploadArchives
+}
+
+javadoc {
+	options.memberLevel = org.gradle.external.javadoc.JavadocMemberLevel.PROTECTED
+	options.author = true
+	options.header = subprojectname;
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+	classifier = "sources"
+	from sourceSets.main.allJava
+}
+  
+task javadocJar(type: Jar) {
+	classifier = "javadoc"
+	from javadoc
+}
+
+artifacts {
+	archives sourcesJar
+	archives javadocJar
+}
+
+gradle.taskGraph.whenReady {taskGraph ->
+	if (taskGraph.hasTask(uploadReleaseArchives)) {
+		version += '-RELEASE'
+	} else if (taskGraph.hasTask(uploadSanpshotArchives)) {
+	    version += '-SNAPSHOT'
+	}
+}

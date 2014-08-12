@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE logback>
+<configuration scan="true" scanPeriod="60 seconds">
+
+  <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+      <resetJUL>true</resetJUL>
+  </contextListener>
+
+  <!-- To enable JMX Management -->
+  <jmxConfigurator />
+  
+  <if condition='property("spring.profiles.active").equals("")'>
+    <then>
+         <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>%d %5p %50.50c{50}:%4L - %m%n</pattern>
+            </encoder>
+        </appender>
+        <root level="debug">
+            <appender-ref ref="CONSOLE" />
+        </root>
+    </then>
+    <else>
+      <appender name="CATALINA" class="ch.qos.logback.core.rolling.RollingFileAppender">
+          <file>${catalina.base}/logs/catalina.log</file>
+          <append>true</append>
+            <encoder>
+                <charset>utf-8</charset>
+                <pattern>%d %5p %50.50c{50}:%4L - %m%n</pattern>
+            </encoder>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>${catalina.base}/logs/catalina-%d{yyyy.MM.dd}-%i.log.zip</fileNamePattern>
+                <maxHistory>10<!-- days --></maxHistory>
+                <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                    <maxFileSize>10MB</maxFileSize>
+                </timeBasedFileNamingAndTriggeringPolicy>
+            </rollingPolicy>
+        </appender>
+        <root level="error">
+            <appender-ref ref="CATALINA" />
+        </root>
+    </else>
+  </if>
+  
+  <logger name="io.gmind7" level="debug" />
+  
+  <logger name="org.springframework" level="warn"/>
+      
+  <logger name="org.hibernate" level="warn"/>
+  
+  <logger name="org.hibernate.type" level="trace"/>
+  
+  <logger name="org.infinispan" level="warn"/>
+  
+  <logger name="net.sf.ehcache" level="warn"/>
+  
+  <logger name="org.mybatis" level="warn"/>
+  
+  <logger name="org.mysema" level="warn"/>
+  
+  <logger name="org.thymeleaf" level="warn"/>
+  
+  <logger name="jdbc" level="warn"/>
+  
+  <logger name="jdbc.sqlonly" level="info"/>
+  
+  <logger name="jdbc.resultsettable" level="info"/>
+  
+  <root level="info">
+      <appender-ref ref="Console" />
+  </root>
+  
+</configuration>

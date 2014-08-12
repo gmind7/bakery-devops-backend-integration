@@ -1,0 +1,48 @@
+configure(subprojects.findAll { subproject -> subproject.plugins.hasPlugin('war') }) {
+	
+	description = "[Web] Tomcat Web Service"
+
+	war.doLast{
+		println "####### war unzip name : [$project.name], version : [$project.version], destPath : [$buildDir/exploded]  #######"
+		ant.unzip(src: war.archivePath, dest: "$buildDir/exploded")
+	}
+	  
+	eclipse {
+	  wtp {
+		component {
+		  contextPath = "/"
+		}
+		facet {
+		  facet name: 'jst.web', version: '3.0'
+		  facet name: 'jst.java', version: '1.7'
+		}
+	  }
+	}
+	
+	dependencies {
+	  //Spring Web
+	  compile("org.springframework:spring-webmvc:$springVersion") { force = true }
+	  compile("org.springframework:spring-websocket:$springVersion") { force = true }
+	  compile("org.springframework:spring-messaging:$springVersion") { force = true }
+
+	  //Spring Etc
+	  compile("org.springframework.hateoas:spring-hateoas:$springHateoasVersion") { force = true }
+	  compile("org.springframework.data:spring-data-rest-core:$springDataRestVersion") { force = true }
+	  compile("org.springframework.plugin:spring-plugin-core:$springPluginVersion") { force = true }
+	  
+	  // Thymeleaf
+	  compile "org.thymeleaf:thymeleaf:$thymeleafVersion"
+	  compile "org.thymeleaf:thymeleaf-spring4:$thymeleafVersion"
+	  compile "org.thymeleaf.extras:thymeleaf-extras-springsecurity3:$thymeleafExtrasSpringsecurity3"
+	  compile "nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:$thymeleafLayoutDialectVersion"
+	  
+	  // Servlet
+	  
+	  providedCompile "javax.servlet:javax.servlet-api:3.1.0"
+	  
+	  // Testing
+	  testCompile("org.springframework:spring-test-mvc:$springTestMvcVersion") { force = true }
+	  testCompile "org.apache.tomcat.embed:tomcat-embed-websocket:$apacheTomcatVersion"
+	}
+	
+}

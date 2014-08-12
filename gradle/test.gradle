@@ -1,0 +1,34 @@
+apply plugin: 'jacoco'
+//apply plugin: 'pmd'
+//apply plugin: 'findbugs'
+
+jacocoTestReport {
+	reports {
+		xml.enabled true
+		html.enabled true
+		csv.enabled false
+	}
+}
+
+//configurations {
+//	crosstest
+//	testCompile.extendsFrom crosstest  // testCompile이 crosstest에 의존하게 변경
+//}
+
+//eclipse {
+//	classpath {
+//		minusConfigurations += configurations.crosstest // 불필요한 classpath 등록 방지
+//	}
+//}
+
+/*
+findbugs {
+   ignoreFailures = true
+   sourceSets = [sourceSets.main]
+}
+ 
+pmd {
+   ruleSets = ["basic", "braces", "design"]
+   ignoreFailures = true
+}
+*/
