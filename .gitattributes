@@ -38,3 +38,5 @@
 *.png           binary
 *.so            binary
 *.war           binary
+
+bakery-devops-backend-integration/tree/master/devops-dashboard-web/src/main/webapp/resources/* linguist-vendored
